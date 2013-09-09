@@ -81,6 +81,8 @@ it especially easy to overload operations and functions for new types
 facilities make it easy to write code that generates other code,
 essentially allowing you to extend the language as needed.  And so on...
 
+See also Viral Shah's [Julia slides](https://groups.google.com/group/julia-dev/attach/d39d70a92536fc73/Fifth-Elephant-2013.pdf).
+
 ## Installing Julia and IJulia
 
 First, [install IPython](http://ipython.org/install.html) and related
