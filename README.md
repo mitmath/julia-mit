@@ -35,7 +35,7 @@ syntax that is superficially reminiscent of Matlab's.
 
 High-level dynamic programming languages (as opposed to low-level
 languages like C or static languages like Java) are essential for
-interactive exploration of computational science.  The allow you to
+interactive exploration of computational science.  They allow you to
 play with matrices, computations on large datasets, plots, and so on
 without having to worry about managing memory, declaring types, or
 other minutiae—you can open up a window and start typing commands to
