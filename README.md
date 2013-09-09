@@ -11,7 +11,9 @@ beginning to use [Julia](http://julialang.org/), a fairly new language
 for technical computing.  This page is intended to supplement the
 [Julia documentation](http://docs.julialang.org/en/latest/) with some
 simple tutorials on installing and using Julia targeted at MIT
-students.
+students.  See also our [Julia
+cheatsheet](http://math.mit.edu/~stevenj/Julia-cheatsheet.pdf) listing
+a few basic commands.
 
 In particular, we will be using Julia in the
 [IJulia](https://github.com/JuliaLang/IJulia.jl) browser-based
