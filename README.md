@@ -158,7 +158,7 @@ If you hit **return** *without* the shift key, it will add additional
 lines to a single input cell.  For example, we can [define a variable](http://docs.julialang.org/en/latest/manual/variables/)
 `x` (using the built-in constant `pi` and the built-in function
 `sin`), and then evaluate a polynomial `3x^2 + 2x - 5` in terms of `x`
-(note that, unlike Matlabor Python, we don't have to type `3*x^2` if
+(note that, unlike Matlab or Python, we don't have to type `3*x^2` if
 we don't want to: a number followed by a variable is automatically
 interpreted as multiplication without having to type `*`):
 
