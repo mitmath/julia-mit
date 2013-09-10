@@ -85,6 +85,14 @@ See also Viral Shah's [Julia slides](https://groups.google.com/group/julia-dev/a
 
 ## Installing Julia and IJulia
 
+**Note**: If you have [MIT web
+  certificates](http://ist.mit.edu/certificates), you may be able to
+  run IJulia remotely on our cluster, *without* installing anything,
+  by going to
+  [https://ijulia.csail.mit.edu:8000](https://ijulia.csail.mit.edu:8000).
+  We are still setting up this server and availability may currently be
+  intermittent, however.
+
 First, [install IPython](http://ipython.org/install.html) and related
 scientific-Python packages (SciPy and Matplotlib).  The simplest way
 to do this on Mac and Windows is by [downloading the Anaconda
