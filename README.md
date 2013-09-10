@@ -22,6 +22,8 @@ enviroment, which leverages your web browser and
 combining code, graphics, formatted text, and even equations, with
 sophisticated plots via [Matplotlib](http://matplotlib.org/).
 
+See also Viral Shah's [Julia slides](https://github.com/ViralBShah/julia-presentations/raw/master/Fifth-Elephant-2013/Fifth-Elephant-2013.pdf) and the January 2013 [Julia Tutorial videos](http://julialang.org/blog/2013/03/julia-tutorial-MIT/).
+
 ## Why Julia?
 
 Traditionally, these sorts of courses at MIT have used
@@ -80,8 +82,6 @@ it especially easy to overload operations and functions for new types
 [metaprogramming](http://docs.julialang.org/en/latest/manual/metaprogramming/)
 facilities make it easy to write code that generates other code,
 essentially allowing you to extend the language as needed.  And so on...
-
-See also Viral Shah's [Julia slides](https://groups.google.com/group/julia-dev/attach/d39d70a92536fc73/Fifth-Elephant-2013.pdf).
 
 ## Installing Julia and IJulia
 
