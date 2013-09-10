@@ -120,6 +120,9 @@ problem you can type `Pkg.fixup()` to try to rerun the install scripts.
 * Windows binary installation is currently broken (there are a couple
   of libraries that don't have Windows binaries set up yet); we
   are hoping to fix this in the next few days.
+* If `Pkg.add("IJulia")` says that the IJulia package doesn't exist,
+  then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
+  run `Pkg.update()` in Julia, and try again.
 
 ## Running Julia in the IJulia Notebook
 
