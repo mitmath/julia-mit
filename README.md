@@ -108,6 +108,19 @@ Pkg.add("IJulia")
 Pkg.add("PyPlot")
 ```
 
+Troubleshooting:
+
+* If you ran into a problem with the above steps, after fixing the 
+problem you can type `Pkg.fixup()` to try to rerun the install scripts.
+* If you tried it a while ago, try running `Pkg.update()` and try again:
+  this will fetch the latest versions of the Julia packages in case
+  the problem you saw was fixed.
+* On MacOS, you will need to run `Pkg.add("Homebrew")` first.  On
+  Windows, it will want you to run `Pkg.add("RPMmd")` first.
+* Windows binary installation is currently broken (there are a couple
+  of libraries that don't have Windows binaries set up yet); we
+  are hoping to fix this in the next few days.
+
 ## Running Julia in the IJulia Notebook
 
 Once you have followed the installation steps above, open up the
