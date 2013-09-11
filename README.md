@@ -132,6 +132,28 @@ problem you can type `Pkg.fixup()` to try to rerun the install scripts.
   then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
   run `Pkg.update()` in Julia, and try again.
 
+### Julia on MIT Athena
+
+Julia is also installed on MIT's [Athena Computing
+Environment](http://ist.mit.edu/athena).  Any MIT student can use the
+computers in the [Athena Clusters](http://ist.mit.edu/athena-clusters)
+on campus, and you can also log in remotely to `athena.dialup.mit.edu`
+via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).  (*Note*: the
+`linux.mit.edu` dialup does *not* work with Julia.)
+
+In the terminal of an Athena machine, type:
+```
+add julia
+julia -ver 0.2
+```
+to run Julia.  At the `julia>` prompt, type `Pkg.add("PyPlot")` to
+install the PyPlot plotting package.
+
+Currently, you must use Julia on Athena via the command-line terminal,
+although graphical plots work (and will appear in a separate plot
+window).  We hope to have the IJulia browser-based notebook interface
+running on Athena by next week.
+
 ## Running Julia in the IJulia Notebook
 
 Once you have followed the installation steps above, open up the
