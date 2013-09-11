@@ -125,6 +125,7 @@ problem you can type `Pkg.fixup()` to try to rerun the install scripts.
   the problem you saw was fixed.
 * On MacOS, you will need to run `Pkg.add("Homebrew")` first.  On
   Windows, it will want you to run `Pkg.add("RPMmd")` first.
+* On MacOS, you currently need MacOS 10.7 or later; [MacOS 10.6 doesn't work](https://github.com/JuliaLang/julia/issues/4215) (unless you compile Julia yourself, from source code).
 * Windows binary installation is currently broken (there are a couple
   of libraries that don't have Windows binaries set up yet); we
   are hoping to fix this in the next few days.
