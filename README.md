@@ -219,3 +219,26 @@ equivalents for most of the Matlab plotting functions.  For example:
 
 ![IJulia notebook](notebook-3.png "IJulia notebook with a plot")
 
+## Printing/exporting Notebooks
+
+Currently, printing a notebook from the browser's *Print* command <a
+href="https://github.com/ipython/ipython/issues/4196">doesn't
+work</a>.  There are three solutions:
+
+* For turning in homework, a class may allow you to submit the notebook file
+  (`.ipynb` file) electronically (the graders will handle printing).
+
+* The best way to print is currently to use IPython's
+  [nbconvert](http://ipython.org/ipython-doc/rel-1.0.0/interactive/nbconvert.html)
+  utility.  For example, if you have a file `mynotebook.ipynb`, you
+  can run `ipython nbconvert mynotebook.ipynb` to convert it to an
+  HTML file that you can open and print in your web browser.  This
+  requires you to install [IPython](http://ipython.org/install.html),
+  [Sphinx](http://sphinx-doc.org/latest/install.html) (which is
+  automatically installed with the Anaconda Python/IPython distribution), and
+  [Pandoc](http://johnmacfarlane.net/pandoc/installing.html) on your
+  computer.
+
+* If you post your notebook in a Dropbox account or in some other
+  web-accessible location, you can paste the URL into the online [nbviewer](http://nbviewer.ipython.org/) to get a printable version.
+
