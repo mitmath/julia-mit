@@ -110,10 +110,8 @@ conda update ipython
 Second, [download Julia](http://julialang.org/downloads/) *version
 0.2* (currently in prerelease) and run the installer.  Do *not*
 download version 0.1.  Then run the Julia application (double-click on
-it; on Windows, the program is called `julia` and resides in a `bin`
-subdirectory of the Julia directory that you downloaded); a window
-with a `julia>` prompt will appear.  At the prompt, type: ```
-Pkg.add("IJulia") Pkg.add("PyPlot") ```
+it); a window with a `julia>` prompt will appear.  At the prompt,
+type: ``` Pkg.add("IJulia") Pkg.add("PyPlot") ```
 
 Troubleshooting:
 
@@ -162,7 +160,7 @@ command line (Terminal or Command Prompt) and type:
 ipython notebook --profile julia
 ```
 
-* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">same directory</a> as the one in which the Julia program is located.  e.g., open up the window for the `bin` directory containing `julia`, and then choose `Open Command Prompt` from the `File` menu in order to type the above command.
+* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose `Open Command Prompt` from the `File` menu in order to type the above command.
 
 A "dashboard" window like this should open in your web browser:
 
