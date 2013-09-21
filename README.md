@@ -107,14 +107,13 @@ conda update conda
 conda update ipython
 ```
 
-Second, [download Julia](http://julialang.org/downloads/) *version 0.2*
-(currently in prerelease) and run the installer.  Do *not* download
-version 0.1.   Then run the Julia application (double-click on it); a
-window with a `julia>` prompt will appear.  At the prompt, type:
-```
-Pkg.add("IJulia")
-Pkg.add("PyPlot")
-```
+Second, [download Julia](http://julialang.org/downloads/) *version
+0.2* (currently in prerelease) and run the installer.  Do *not*
+download version 0.1.  Then run the Julia application (double-click on
+it; on Windows, the program is called `julia` and resides in a `bin`
+subdirectory of the Julia directory that you downloaded); a window
+with a `julia>` prompt will appear.  At the prompt, type: ```
+Pkg.add("IJulia") Pkg.add("PyPlot") ```
 
 Troubleshooting:
 
@@ -122,7 +121,7 @@ Troubleshooting:
 problem you can type `Pkg.fixup()` to try to rerun the install scripts.
 * If you tried it a while ago, try running `Pkg.update()` and try again:
   this will fetch the latest versions of the Julia packages in case
-  the problem you saw was fixed.
+  the problem you saw was fixed.  If this doesn't work, try just deleting the whole `.ijulia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory).
 * On MacOS, you will need to run `Pkg.add("Homebrew")` first.  On
   Windows, it will want you to run `Pkg.add("RPMmd")` first.
 * On MacOS, you currently need MacOS 10.7 or later; [MacOS 10.6 doesn't work](https://github.com/JuliaLang/julia/issues/4215) (unless you compile Julia yourself, from source code).
@@ -162,6 +161,8 @@ command line (Terminal or Command Prompt) and type:
 ```
 ipython notebook --profile julia
 ```
+
+* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">same directory</a> as the one in which the Julia program is located.  e.g., open up the window for the `bin` directory containing `julia`, and then choose `Open Command Prompt` from the `File` menu in order to type the above command.
 
 A "dashboard" window like this should open in your web browser:
 
