@@ -160,7 +160,7 @@ command line (Terminal or Command Prompt) and type:
 ipython notebook --profile julia
 ```
 
-* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose `Open Command Prompt` from the `File` menu in order to type the above command.
+* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose *Open Command Prompt* from the *File* menu in order to type the above command.
 
 A "dashboard" window like this should open in your web browser:
 
