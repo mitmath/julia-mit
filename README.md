@@ -123,9 +123,7 @@ Troubleshooting:
 problem you can type `Pkg.fixup()` to try to rerun the install scripts.
 * If you tried it a while ago, try running `Pkg.update()` and try again:
   this will fetch the latest versions of the Julia packages in case
-  the problem you saw was fixed.  If this doesn't work, try just deleting the whole `.ijulia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory).
-* On MacOS, you will need to run `Pkg.add("Homebrew")` first.  On
-  Windows, it will want you to run `Pkg.add("RPMmd")` first.
+  the problem you saw was fixed.  If this doesn't work, try just deleting the whole `.julia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory).
 * On MacOS, you currently need MacOS 10.7 or later; [MacOS 10.6 doesn't work](https://github.com/JuliaLang/julia/issues/4215) (unless you compile Julia yourself, from source code).
 * If `Pkg.add("IJulia")` says that the IJulia package doesn't exist,
   then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
