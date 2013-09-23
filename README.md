@@ -111,7 +111,11 @@ Second, [download Julia](http://julialang.org/downloads/) *version
 0.2* (currently in prerelease) and run the installer.  Do *not*
 download version 0.1.  Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
-type: ``` Pkg.add("IJulia") Pkg.add("PyPlot") ```
+type `Pkg.add("Homebrew")` on MacOS or `Pkg.add("RPMmd")` on Windows (or nothing on Linux) and *then* type:
+```
+Pkg.add("IJulia")
+Pkg.add("PyPlot")
+```
 
 Troubleshooting:
 
