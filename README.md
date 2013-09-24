@@ -107,7 +107,7 @@ conda update conda
 conda update ipython
 ```
 
-* **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path" and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
+* **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
 
 Second, [download Julia](http://julialang.org/downloads/) *version
 0.2* (currently in prerelease) and run the installer.  Do *not*
