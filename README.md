@@ -107,6 +107,8 @@ conda update conda
 conda update ipython
 ```
 
+* ***Important***: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path" and also *Register Anaconda as default Python version of the system*.  Be sure to ***check these boxes***.
+
 Second, [download Julia](http://julialang.org/downloads/) *version
 0.2* (currently in prerelease) and run the installer.  Do *not*
 download version 0.1.  Then run the Julia application (double-click on
@@ -128,6 +130,7 @@ problem you can type `Pkg.fixup()` to try to rerun the install scripts.
 * If `Pkg.add("IJulia")` says that the IJulia package doesn't exist,
   then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
   run `Pkg.update()` in Julia, and try again.
+* On Windows, if you get an error `no module named site` when `using PyPlot`, probably you forgot to check the boxes in the Anaconda installer (above) to register Anaconda as the default Python version.  Either re-install Anaconda or set the [environment variables](http://www.computerhope.com/issues/ch000549.htm) `PYTHONHOME=C:\Anaconda` and `PYTHONPATH=C:\Anaconda\Lib`.
 
 ### Julia on MIT Athena
 
