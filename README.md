@@ -131,6 +131,7 @@ problem you can type `Pkg.fixup()` to try to rerun the install scripts.
   then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
   run `Pkg.update()` in Julia, and try again.
 * On Windows, if you get an error `no module named site` when `using PyPlot`, probably you forgot to check the boxes in the Anaconda installer (above) to register Anaconda as the default Python version.  Either re-install Anaconda or set the [environment variables](http://www.computerhope.com/issues/ch000549.htm) `PYTHONHOME=C:\Anaconda` and `PYTHONPATH=C:\Anaconda\Lib`.
+* If the browser opens the notebook and `1+1` works but basic functions like `sin(3)` don't work, then probably you are running Python and not Julia.  Look in the upper-left corner of the notebook window: if it says **IP[y]: Notebook** then you are running Python.  Probably this was because your `Pkg.add("IJulia")` failed and you ignored the error.
 
 ### Julia on MIT Athena
 
