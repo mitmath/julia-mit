@@ -119,7 +119,7 @@ Pkg.add("IJulia")
 Pkg.add("PyPlot")
 ```
 
-Troubleshooting:
+### Troubleshooting:
 
 * If you ran into a problem with the above steps, after fixing the 
 problem you can type `Pkg.fixup()` to try to rerun the install scripts.
