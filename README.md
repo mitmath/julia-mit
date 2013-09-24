@@ -96,16 +96,7 @@ essentially allowing you to extend the language as needed.  And so on...
 First, [install IPython](http://ipython.org/install.html) and related
 scientific-Python packages (SciPy and Matplotlib).  The simplest way
 to do this on Mac and Windows is by [downloading the Anaconda
-package](http://continuum.io/downloads), running its installer, and
-then running the following commands on the command line (the
-[Terminal](https://en.wikipedia.org/wiki/Terminal_%28OS_X%29) program
-in MacOS or the [Command
-Prompt](https://en.wikipedia.org/wiki/Command_Prompt) on Windows):
-
-```
-conda update conda
-conda update ipython
-```
+package](http://continuum.io/downloads) and running its installer.
 
 * **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
 
@@ -159,12 +150,15 @@ running on Athena by next week.
 ## Running Julia in the IJulia Notebook
 
 Once you have followed the installation steps above, open up the
-command line (Terminal or Command Prompt) and type:
+command line (the
+[Terminal](https://en.wikipedia.org/wiki/Terminal_%28OS_X%29) program
+in MacOS or the [Command
+Prompt](https://en.wikipedia.org/wiki/Command_Prompt) on Windows) and type:
 ```
 ipython notebook --profile julia
 ```
 
-* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose *Open Command Prompt* from the *File* menu in order to type the above command.
+* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose *Open Command Prompt* from the *File* menu (in Windows 8) in order to type the above command.
 
 A "dashboard" window like this should open in your web browser:
 
