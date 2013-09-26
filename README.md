@@ -138,16 +138,24 @@ via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).  (*Note*: the
 
 In the terminal of an Athena machine, type:
 ```
-add julia
-julia -ver 0.2
+add -f julia_v0.2
+export PYTHONPATH=/mit/julia_v0.2/lib/python2.7/site-packages
 ```
-to run Julia.  At the `julia>` prompt, type `Pkg.add("PyPlot")` to
-install the PyPlot plotting package.
+to load the Julia and IPython software locker.
 
-Currently, you must use Julia on Athena via the command-line terminal,
-although graphical plots work (and will appear in a separate plot
-window).  We hope to have the IJulia browser-based notebook interface
-running on Athena by next week.
+The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and t the `julia>` prompt, type
+```
+Pkg.update()
+Pkg.add("PyPlot")
+Pkg.add("IJulia")
+```
+
+Thereafter, you can open the IJulia notebook in the web browser by
+running `ipython notebook --profile julia` as described below.
+
+**Note:** You can only run the IJulia notebook if you physically go to an
+Athena cluster.  If you are [logging in remotely](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907166) to
+`athena.dialup.mit.edu`, you can type `julia` to use the text terminal.  You can still use PyPlot graphics via dialup, but in order to do so you will need to [set up X Windows](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907239) on your computer.
 
 ## Running Julia in the IJulia Notebook
 
