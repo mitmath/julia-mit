@@ -143,7 +143,7 @@ export PYTHONPATH=/mit/julia_v0.2/lib/python2.7/site-packages
 ```
 to load the Julia and IPython software locker.
 
-The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and t the `julia>` prompt, type
+The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type
 ```
 Pkg.update()
 Pkg.add("PyPlot")
