@@ -13,7 +13,7 @@ for technical computing.  This page is intended to supplement the
 simple tutorials on installing and using Julia targeted at MIT
 students.  See also our [Julia
 cheatsheet](http://math.mit.edu/~stevenj/Julia-cheatsheet.pdf) listing
-a few basic commands.
+a few basic commands, as well as the [Learn Julia in Y minutes](http://learnxinyminutes.com/docs/julia/) tutorial page.
 
 In particular, we will be using Julia in the
 [IJulia](https://github.com/JuliaLang/IJulia.jl) browser-based
