@@ -4,7 +4,7 @@ Julia for Numerical Computation in MIT Courses
 Several MIT courses involving numerical computation, including
 [18.06](http://web.mit.edu/18.06/www/),
 [18.303](http://math.mit.edu/~stevenj/18.303/),
-[18.330](http://homerreid.ath.cx/teaching/18.330/),
+[18.330](http://homerreid.com/teaching/18.330/),
 [18.335/6.337](http://math.mit.edu/~stevenj/18.335/), and
 [18.337/6.338](http://beowulf.csail.mit.edu/18.337/index.html), are
 beginning to use [Julia](http://julialang.org/), a fairly new language
