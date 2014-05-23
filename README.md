@@ -97,6 +97,7 @@ First, [install IPython](http://ipython.org/install.html) and related
 scientific-Python packages (SciPy and Matplotlib).  The simplest way
 to do this on Mac and Windows is by [downloading the Anaconda
 package](http://continuum.io/downloads) and running its installer.
+(Do *not* use Enthought Canopy/EPD.)
 
 * **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
 
@@ -126,6 +127,7 @@ problem you can type `Pkg.build()` to try to rerun the install scripts.
 * Internet Explorer 8 (the default in Windows 7) or 9 don't work with the notebook; use Firefox (6 or later) or Chrome (13 or later).  Internet Explorer 10 in Windows 8 works (albeit with a few rendering glitches), but Chrome or Firefox is better.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try running `ipython notebook` (without Julia) to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
 * On Windows, if the notebook says the kernel crashed (repeatedly) and there is an error message `"julia-readline.exe" is not recognized` in the command-line window, the problem is that you aren't running the `ipython` command from within the Julia `bin` directory; see the "Important" note below.
+* Enthought Canopy/EPD will not work; it is currently [incompatible with PyCall](https://github.com/stevengj/PyCall.jl/issues/42).   See [this page on uninstalling Canopy](https://support.enthought.com/entries/23580651-Uninstalling-Canopy); on MacOS and GNU/Linux, it is sufficient to delete any Canopy-related lines from the `.profile` and `.bash_profile` files in your home directory.
 
 ### Julia on MIT Athena
 
