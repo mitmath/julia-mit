@@ -85,14 +85,6 @@ essentially allowing you to extend the language as needed.  And so on...
 
 ## Installing Julia and IJulia
 
-**Note**: If you have [MIT web
-  certificates](http://ist.mit.edu/certificates), you may be able to
-  run IJulia remotely on our cluster, *without* installing anything,
-  by going to
-  [https://ijulia.csail.mit.edu:8000](https://ijulia.csail.mit.edu:8000).
-  We are still setting up this server and availability may currently be
-  intermittent, however.
-
 First, [install IPython](http://ipython.org/install.html) and related
 scientific-Python packages (SciPy and Matplotlib).  The simplest way
 to do this on Mac and Windows is by [downloading the Anaconda
@@ -102,7 +94,7 @@ package](http://continuum.io/downloads) and running its installer.
 * **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
 
 Second, [download Julia](http://julialang.org/downloads/) *version
-0.2* and run the installer.  Do *not*
+0.3* and run the installer.  Do *not*
 download version 0.1.  Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
@@ -251,13 +243,17 @@ equivalents for most of the Matlab plotting functions.  For example:
 ## Printing/exporting Notebooks
 
 Currently, printing a notebook from the browser's *Print* command <a
-href="https://github.com/ipython/ipython/issues/4196">doesn't
-work</a>.  There are three solutions:
+href="https://github.com/ipython/ipython/issues/4196">can be somewhat problematic</a>.  There are four solutions:
+
+* At the top of the notebook, click on the *File* menu (in the
+  notebook, *not* the browser's global menu bar), and choose **Print
+  Preview**.  This should open up a window/tab that you can print
+  normally.  (We've heard that this doesn't work in some browser/OS combinations, though; let us know how it works for you.)
 
 * For turning in homework, a class may allow you to submit the notebook file
-  (`.ipynb` file) electronically (the graders will handle printing).
+  (`.ipynb` file) electronically (the graders will handle printing).  You can save a notebook file in a different location by choosing **Download as** from the notebook's *File* menu.
 
-* The best way to print is currently to use IPython's
+* The highest-quality printed output is produced by IPython's
   [nbconvert](http://ipython.org/ipython-doc/rel-1.0.0/interactive/nbconvert.html)
   utility.  For example, if you have a file `mynotebook.ipynb`, you
   can run `ipython nbconvert mynotebook.ipynb` to convert it to an
