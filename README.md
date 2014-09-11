@@ -146,9 +146,23 @@ Pkg.add("IJulia")
 Thereafter, you can open the IJulia notebook in the web browser by
 running `ipython notebook --profile julia` as described below.
 
-**Note:** You can only run the IJulia notebook if you physically go to an
-Athena cluster.  If you are [logging in remotely](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907166) to
-`athena.dialup.mit.edu`, you can type `julia` to use the text terminal.  You can still use PyPlot graphics via dialup, but in order to do so you will need to [set up X Windows](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907239) on your computer.
+#### Remote access to Julia on Athena.
+
+If you are [logging in
+remotely](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907166)
+to `athena.dialup.mit.edu`, you can use a trick called "port
+forwarding" to run IJulia in your local web browser (MUCH faster and
+nicer than running a web browser remotely over X Windows).   The steps are:
+
+* Log in by typing `ssh -L 8778:localhost:8998 athena.dialup.mit.edu` into your terminal.  (This works with Macs and GNU/Linux; how you do it on Windows will depend upon your ssh client and whether it supports port forwarding: you want to forward port 8998 on the remote machine to port 8778 on `localhost`.)
+
+* `add julia` and make sure IJulia is installed as above.
+
+* Quit Julia and type (at the Athena prompt): `ipython notebook --profile julia --no-browser`
+
+* In your ordinary web browser, type `localhost:8778` in the address bar.
+
+You should see the IPython dashboard for IJulia running on Athena (creating a new notebook will create the file in your Athena account).
 
 ### Updating Julia and IJulia
 
