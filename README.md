@@ -132,8 +132,7 @@ via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).  (*Note*: the
 
 In the terminal of an Athena machine, type:
 ```
-add -f julia_v0.2
-export PYTHONPATH=/mit/julia_v0.2/lib/python2.7/site-packages
+add julia
 ```
 to load the Julia and IPython software locker.
 
