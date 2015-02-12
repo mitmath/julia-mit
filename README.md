@@ -104,6 +104,10 @@ Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
 
+* **Important**: on Windows, install somewhere non-default in a directory that does not require administrator 
+privileges.  Installing to the default location will require administrator privileges when building 
+some of `IJulia`'s binary dependencies.
+
 ```jl
 Pkg.add("IJulia")
 Pkg.add("PyPlot")
