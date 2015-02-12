@@ -5,8 +5,11 @@ Several MIT courses involving numerical computation, including
 [18.06](http://web.mit.edu/18.06/www/),
 [18.303](http://math.mit.edu/~stevenj/18.303/),
 [18.330](http://homerreid.com/teaching/18.330/),
-[18.335/6.337](http://math.mit.edu/~stevenj/18.335/), and
-[18.337/6.338](http://beowulf.csail.mit.edu/18.337/index.html), are
+[18.335/6.337](http://math.mit.edu/~stevenj/18.335/), 
+[18.337/6.338](http://beowulf.csail.mit.edu/18.337/index.html),
+and
+[18.338](http://web.mit.edu/18.338/www/),
+are
 beginning to use [Julia](http://julialang.org/), a fairly new language
 for technical computing.  This page is intended to supplement the
 [Julia documentation](http://docs.julialang.org/en/latest/) with some
@@ -86,19 +89,22 @@ essentially allowing you to extend the language as needed.  And so on...
 ## Installing Julia and IJulia
 
 First, [install IPython](http://ipython.org/install.html) and related
-scientific-Python packages (SciPy and Matplotlib).  The simplest way
+scientific Python packages (SciPy and Matplotlib).  The simplest way
 to do this on Mac and Windows is by [downloading the Anaconda
 package](http://continuum.io/downloads) and running its installer.
 (Do *not* use Enthought Canopy/EPD.)
 
 * **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
 
-Second, [download Julia](http://julialang.org/downloads/) *version
-0.3* and run the installer.  Do *not*
-download version 0.1.  Then run the Julia application (double-click on
+If you have already installed Anaconda more than a few months ago, you may need to update Anaconda. Run `conda install anaconda` in the command prompt to update Anaconda and the necessary packages. For older Anaconda installations you may have to run `conda install numpy` twice and then `conda install anaconda` until no more updatable packages are found.
+
+Second, [download the current release of Julia](http://julialang.org/downloads/) *version
+0.3* and run the installer.
+Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
-```
+
+```jl
 Pkg.add("IJulia")
 Pkg.add("PyPlot")
 ```
@@ -111,13 +117,11 @@ problem you can type `Pkg.build()` to try to rerun the install scripts.
   this will fetch the latest versions of the Julia packages in case
   the problem you saw was fixed.  Run `Pkg.build("IJulia")` if your Julia version may have changed.  If this doesn't work, try just deleting the whole `.julia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory) and re-adding the packages.
 * On MacOS, you currently need MacOS 10.7 or later; [MacOS 10.6 doesn't work](https://github.com/JuliaLang/julia/issues/4215) (unless you compile Julia yourself, from source code).
-* If `Pkg.add("IJulia")` says that the IJulia package doesn't exist,
-  then you probably downloaded Julia 0.1 by mistake.  Download Julia 0.2,
-  run `Pkg.update()` in Julia, and try again.
-* On Windows, if you get an error `no module named site` when `using PyPlot`, probably you forgot to check the boxes in the Anaconda installer (above) to register Anaconda as the default Python version.  Either re-install Anaconda or set the [environment variables](http://www.computerhope.com/issues/ch000549.htm) `PYTHONHOME=C:\Anaconda` and `PYTHONPATH=C:\Anaconda\Lib`.
+* On Windows, if you get an error `no module named site` when `using PyPlot`, probably you forgot to check the boxes in the Anaconda installer (above) to register Anaconda as the default Python version.  Either reinstall Anaconda or set the [environment variables](http://www.computerhope.com/issues/ch000549.htm) `PYTHONHOME=C:\Anaconda` and `PYTHONPATH=C:\Anaconda\Lib`.
 * If the browser opens the notebook and `1+1` works but basic functions like `sin(3)` don't work, then probably you are running Python and not Julia.  Look in the upper-left corner of the notebook window: if it says **IP[y]: Notebook** then you are running Python.  Probably this was because your `Pkg.add("IJulia")` failed and you ignored the error.
 * Internet Explorer 8 (the default in Windows 7) or 9 don't work with the notebook; use Firefox (6 or later) or Chrome (13 or later).  Internet Explorer 10 in Windows 8 works (albeit with a few rendering glitches), but Chrome or Firefox is better.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try running `ipython notebook` (without Julia) to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
+* If the notebook opens up but shows the Jupyter logo, you are running a beta version of IPython Notebook (3.0.0b1) that is not currently supported. Check by running `ipython --version` in the command line that you are running version 2.x (currently 2.3.1).
 * On Windows, if the notebook says the kernel crashed (repeatedly) and there is an error message `"julia-readline.exe" is not recognized` in the command-line window, the problem is that you aren't running the `ipython` command from within the Julia `bin` directory; see the "Important" note below.
 * Enthought Canopy/EPD will not work; it is currently [incompatible with PyCall](https://github.com/stevengj/PyCall.jl/issues/42).   See [this page on uninstalling Canopy](https://support.enthought.com/entries/23580651-Uninstalling-Canopy); on MacOS and GNU/Linux, it is sufficient to delete any Canopy-related lines from the `.profile` and `.bash_profile` files in your home directory.
 
@@ -137,7 +141,7 @@ add julia
 to load the Julia and IPython software locker.
 
 The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type
-```
+```jl
 Pkg.update()
 Pkg.add("PyPlot")
 Pkg.add("IJulia")
@@ -170,7 +174,7 @@ Julia is improving rapidly, so it won't be long before you want to
 update to a more recent version.  The same is true of Julia add-on
 packages like PyPlot.  To update the packages only, keeping Julia itself
 the same, just run:
-```
+```jl
 Pkg.update()
 ```
 at the Julia prompt (or in IJulia).
