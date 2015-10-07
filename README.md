@@ -219,10 +219,9 @@ notebook()
 ```
 (You will have to leave the Julia command-line window open in order
 to keep the IJulia/Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
-ever want to restart the Jupyter server you will need to kill it manually.)
+ever want to restart the Jupyter server you will need to kill it manually.
 
-
-A "dashboard" window like this should open in your web browser:
+A "dashboard" window like this should open in your web browser (at address `localhost:8888`, which you can return to at any time as long as the `notebook()` server is running; I usually keep it running all the time):
 
 ![IJulia dashboard](dashboard.png "IJulia Dashboard Window")
 
