@@ -5,7 +5,7 @@ Several MIT courses involving numerical computation, including
 [18.06](http://web.mit.edu/18.06/www/),
 [18.303](http://math.mit.edu/~stevenj/18.303/),
 [18.330](http://homerreid.com/teaching/18.330/),
-[18.335/6.337](http://math.mit.edu/~stevenj/18.335/), 
+[18.335/6.337](http://math.mit.edu/~stevenj/18.335/),
 [18.337/6.338](http://beowulf.csail.mit.edu/18.337/index.html),
 and
 [18.338](http://web.mit.edu/18.338/www/),
@@ -88,30 +88,46 @@ essentially allowing you to extend the language as needed.  And so on...
 
 ## Installing Julia and IJulia
 
-First, [install IPython](http://ipython.org/install.html) and related
-scientific Python packages (SciPy and Matplotlib).  The simplest way
-to do this on Mac and Windows is by [downloading the Anaconda
-package](http://continuum.io/downloads) and running its installer.
-(Do *not* use Enthought Canopy/EPD.)
-
-* **Important**: on Windows, the Anaconda installer window gives options *Add Anaconda to the System Path* and also *Register Anaconda as default Python version of the system*.  Be sure to **check these boxes**.
-
-If you have already installed Anaconda more than a few months ago, you may need to update Anaconda. Run `conda install anaconda` in the command prompt to update Anaconda and the necessary packages. For older Anaconda installations you may have to run `conda install numpy` twice and then `conda install anaconda` until no more updatable packages are found.
-
 Second, [download the current release of Julia](http://julialang.org/downloads/) *version
-0.3* and run the installer.
+0.3 or later* and run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
 
 ```jl
+ENV["PYTHON"]=""
+ENV["JUPYTER"]=""
 Pkg.add("IJulia")
 Pkg.add("PyPlot")
 ```
 
+The first two lines set the `PYTHON` and `JUPYTER` environment
+variables to nothing, so that Julia will install its own little Python
+distribution via
+[Miniconda](http://conda.pydata.org/docs/install/quick.html) and the
+[Conda.jl](https://github.com/Luthaf/Conda.jl) package.  This is the
+most painless way to get a working IJulia
+([Jupyter](http://jupyter.org/) browser-based "notebook" interface)
+and PyPlot ([Matplotlib](http://matplotlib.org/) Python-based
+plotting).  Alternatively, if you really know what you are doing, you
+an use your own Python installation (we recommend the
+[Anaconda](https://www.continuum.io/why-anaconda) Python
+distribution); if you omit those two `ENV` lines it will use whatever
+you have installed (assuming it is in your `PATH`).  You can also
+switch Python distributions at any time by setting `ENV["PYTHON"]` to
+the desired `python` program path and then running
+`Pkg.build("PyCall")`.
+
+Then you can launch the notebook by running
+```jl
+using IJulia
+notebook()
+```
+at the `julia>` prompt, as described below.
+
 ### Troubleshooting:
 
-* If you ran into a problem with the above steps, after fixing the 
+* If you ran into a problem with the above steps, after fixing the
 problem you can type `Pkg.build()` to try to rerun the install scripts.
 * If you tried it a while ago, try running `Pkg.update()` and try again:
   this will fetch the latest versions of the Julia packages in case
@@ -143,12 +159,16 @@ to load the Julia and IPython software locker.
 The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type
 ```jl
 Pkg.update()
+ENV["JUPYTER"]=""
 Pkg.add("PyPlot")
 Pkg.add("IJulia")
 ```
 
-Thereafter, you can open the IJulia notebook in the web browser by
-running `ipython notebook --profile julia` as described below.
+Thereafter, you can run the notebook as below.
+
+(Unfortunately, as of this writing Athena still has IPython version 2,
+whereas IJulia requires IPython version 3 or later, so you can't use
+the `ipython` on Athena.)
 
 #### Remote access to Julia on Athena.
 
@@ -162,7 +182,7 @@ nicer than running a web browser remotely over X Windows).   The steps are:
 
 * `add julia` and make sure IJulia is installed as above.
 
-* Quit Julia and type (at the Athena prompt): `ipython notebook --profile julia --no-browser`
+* Quit Julia and type (at the Athena prompt): `ipython notebook --no-browser`  ... unfortunately, this won't work until Athena installs a newer version of `ipython`.  Instead of `ipython`, you can find the `jupyter notebook` command that Julia installs by running `using IJulia; join(IJulia.notebook_cmd, " ")` in Julia.
 
 * In your ordinary web browser, type `localhost:8778` in the address bar.
 
@@ -191,28 +211,23 @@ Julia command line (not in IJulia).
 ## Running Julia in the IJulia Notebook
 
 Once you have followed the installation steps above, open up the
-command line (the
-[Terminal](https://en.wikipedia.org/wiki/Terminal_%28OS_X%29) program
-in MacOS or the [Command
-Prompt](https://en.wikipedia.org/wiki/Command_Prompt) on Windows) and type:
+Julia command line (run `julia` or double-click the `julia` program)
+and run
+```jl
+using IJulia
+notebook()
 ```
-ipython notebook --profile julia
-```
-
-* **Important**: On Windows, you must run the above command from the <a href="https://github.com/JuliaLang/julia/issues/4331">`bin` subdirectory</a> of the Julia directory that you downloaded/unpacked.  e.g., open up the window for the `bin` subdirectory and then choose *Open Command Prompt* from the *File* menu (in Windows 8) in order to type the above command.
-
 A "dashboard" window like this should open in your web browser:
 
 ![IJulia dashboard](dashboard.png "IJulia Dashboard Window")
 
-Now, click on the *New Notebook* button to start a new "notebook".  A
-notebook will combine code, computed results, formatted text, and
+Now, click on the *New* button and select the *Julia* option to start a new "notebook".  A notebook will combine code, computed results, formatted text, and
 images; for example, you might use one notebook for each problem set.
 The notebook window that opens will look something like:
 
 ![IJulia notebook](notebook-1.png "IJulia empty notebook")
 
-You can click the "Untitled0" at the top to change the name, e.g. to
+You can click the "Untitled" at the top to change the name, e.g. to
 "My first Julia notebook".  You can enter Julia code at the `In[ ]`
 prompt, and hit **shift-return** to execute it and see the results.
 If you hit **return** *without* the shift key, it will add additional
@@ -249,7 +264,9 @@ module](http://docs.julialang.org/en/latest/manual/modules/) (which
 must usually [be
 installed](http://docs.julialang.org/en/latest/manual/packages/)
 first, e.g. by the `Pkg.add("PyPlot")` command from the installation
-instructions above).
+instructions above).  The *very first* time you do this, it will
+take some time; in Julia 0.4 or later, the module and its dependencies will be
+"precompiled" so that in subsequent Julia sessions it will load quickly.
 
 Then, you can type any of the [commands from
 Matplotlib](http://matplotlib.org/api/pyplot_api.html), which includes
@@ -265,7 +282,7 @@ href="https://github.com/ipython/ipython/issues/4196">can be somewhat problemati
 * At the top of the notebook, click on the *File* menu (in the
   notebook, *not* the browser's global menu bar), and choose **Print
   Preview**.  This should open up a window/tab that you can print
-  normally.  (We've heard that this doesn't work in some browser/OS combinations, though; let us know how it works for you.)
+  normally.
 
 * For turning in homework, a class may allow you to submit the notebook file
   (`.ipynb` file) electronically (the graders will handle printing).  You can save a notebook file in a different location by choosing **Download as** from the notebook's *File* menu.
@@ -283,4 +300,3 @@ href="https://github.com/ipython/ipython/issues/4196">can be somewhat problemati
 
 * If you post your notebook in a Dropbox account or in some other
   web-accessible location, you can paste the URL into the online [nbviewer](http://nbviewer.ipython.org/) to get a printable version.
-
