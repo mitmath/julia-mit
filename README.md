@@ -89,7 +89,7 @@ essentially allowing you to extend the language as needed.  And so on...
 ## Installing Julia and IJulia
 
 Second, [download the current release of Julia](http://julialang.org/downloads/) *version
-0.3 or later* and run the installer.
+0.4.x* and run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
