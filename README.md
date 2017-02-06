@@ -86,9 +86,22 @@ it especially easy to overload operations and functions for new types
 facilities make it easy to write code that generates other code,
 essentially allowing you to extend the language as needed.  And so on...
 
+## Using Julia on juliabox
+
+The simplest way to use Julia is to go to <a href="https://juliabox.com/">juliabox.com</a>.  Once
+you log in (e.g. with a gmail account), you can run Julia code online (on Amazon Cloud servers)
+via the browser-based Jupyter notebook interface without installing *anything* on your computer.
+
+Although you wouldn't want to run large computations on juliabox, it should be fine for
+simple homework problems.
+
 ## Installing Julia and IJulia
 
-Second, [download the current release of Julia](http://julialang.org/downloads/) *version
+If you use Julia enough, you'll eventually want to install it on your own computer.
+Your code will run faster and won't require a network connection, but can still use
+the same browser-based notebook interface.
+
+First, [download the current release of Julia](http://julialang.org/downloads/) *version
 0.5.x* and run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
