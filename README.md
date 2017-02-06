@@ -89,34 +89,15 @@ essentially allowing you to extend the language as needed.  And so on...
 ## Installing Julia and IJulia
 
 Second, [download the current release of Julia](http://julialang.org/downloads/) *version
-0.4.x* and run the installer.
+0.5.x* and run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
 
 ```jl
-ENV["PYTHON"]=""
-ENV["JUPYTER"]=""
 Pkg.add("IJulia")
 Pkg.add("PyPlot")
 ```
-
-The first two lines set the `PYTHON` and `JUPYTER` environment
-variables to nothing, so that Julia will install its own little Python
-distribution via
-[Miniconda](http://conda.pydata.org/docs/install/quick.html) and the
-[Conda.jl](https://github.com/Luthaf/Conda.jl) package.  This is the
-most painless way to get a working IJulia
-([Jupyter](http://jupyter.org/) browser-based "notebook" interface)
-and PyPlot ([Matplotlib](http://matplotlib.org/) Python-based
-plotting).  Alternatively, if you really know what you are doing, you
-an use your own Python installation (we recommend the
-[Anaconda](https://www.continuum.io/why-anaconda) Python
-distribution); if you omit those two `ENV` lines it will use whatever
-you have installed (assuming it is in your `PATH`).  You can also
-switch Python distributions at any time by setting `ENV["PYTHON"]` to
-the desired `python` program path and then running
-`Pkg.build("PyCall")`.
 
 Then you can launch the notebook by running
 ```jl
@@ -136,14 +117,6 @@ problem you can type `Pkg.build()` to try to rerun the install scripts.
 * Internet Explorer 8 (the default in Windows 7) or 9 don't work with the notebook; use Firefox (6 or later) or Chrome (13 or later).  Internet Explorer 10 in Windows 8 works (albeit with a few rendering glitches), but Chrome or Firefox is better.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try creating a new Python notebook (not Julia) from the `New` button in the Jupyter dashboard, to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
 
-The following only apply if you use your own Python distribution (you
-omitted the `ENV` lines above).  If all else fails, just use Julia's
-Conda distribution by setting the `ENV` lines above and running
-`Pkg.build()`.
-
-* On Windows, if you get an error `no module named site` when `using PyPlot`, probably you forgot to check the boxes in the Anaconda installer (above) to register Anaconda as the default Python version.  Either reinstall Anaconda or set the [environment variables](http://www.computerhope.com/issues/ch000549.htm) `PYTHONHOME=C:\Anaconda` and `PYTHONPATH=C:\Anaconda\Lib`.
-* Enthought Canopy/EPD will not work; it is currently [incompatible with PyCall](https://github.com/stevengj/PyCall.jl/issues/42).   See [this page on uninstalling Canopy](https://support.enthought.com/entries/23580651-Uninstalling-Canopy); on MacOS and GNU/Linux, it is sufficient to delete any Canopy-related lines from the `.profile` and `.bash_profile` files in your home directory.
-
 ### Julia on MIT Athena
 
 Julia is also installed on MIT's [Athena Computing
@@ -162,7 +135,6 @@ to load the Julia and IPython software locker.
 The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type
 ```jl
 Pkg.update()
-ENV["JUPYTER"]=""
 Pkg.add("PyPlot")
 Pkg.add("IJulia")
 ```
