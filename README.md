@@ -109,6 +109,12 @@ type:
 
 ```jl
 Pkg.add("IJulia")
+```
+
+You may also want to install these packages, which we tend to
+use in a lot of the lecture materials:
+```jl
+Pkg.add("Interact")
 Pkg.add("PyPlot")
 ```
 
