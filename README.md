@@ -102,7 +102,7 @@ Your code will run faster and won't require a network connection, but can still 
 the same browser-based notebook interface.
 
 First, [download the current release of Julia](http://julialang.org/downloads/) *version
-0.5.x* and run the installer.
+0.6.x* and run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
@@ -124,6 +124,10 @@ using IJulia
 notebook()
 ```
 at the `julia>` prompt, as described below.
+
+(An alternative is to download the [JuliaPro package](https://juliacomputing.com/products/juliapro.html#comparison),
+which includes Julia, IJulia, the [Juno IDE](http://junolab.org/) based on the [Atom editor](https://atom.io/),
+and a number of packages pre-installed.)
 
 ### Troubleshooting:
 
