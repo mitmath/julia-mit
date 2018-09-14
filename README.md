@@ -131,6 +131,7 @@ and a number of packages pre-installed.)
 
 ### Troubleshooting:
 
+* On **Windows**, if you saw an error message like `post-link script failed for package defaults::ipykernel`, then you hit a problem with the Anaconda installer.  A workaround is to force Jupyter to install using Python 2 instead of Python 3, as [explained in this comment](https://github.com/JuliaLang/IJulia.jl/issues/739#issuecomment-419605998).
 * If you ran into a problem with the above steps, after fixing the
 problem you can type `Pkg.build()` to try to rerun the install scripts.
 * If you tried it a while ago, try running `Pkg.update()` and try again:
