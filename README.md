@@ -101,8 +101,8 @@ If you use Julia enough, you'll eventually want to install it on your own comput
 Your code will run faster and won't require a network connection, but can still use
 the same browser-based notebook interface.
 
-First, [download the current release of Julia](http://julialang.org/downloads/) *version
-0.6.x* and run the installer.
+First, [download the 0.6 release of Julia](https://julialang.org/downloads/oldreleases.html) *version
+0.6.x* and run the installer.  (We will soon switch our classes to Julia 1.0 but haven't done so yet in Fall 2018.)
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the prompt,
 type:
