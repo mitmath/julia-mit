@@ -15,7 +15,7 @@ for technical computing.  This page is intended to supplement the
 [Julia documentation](http://docs.julialang.org/en/latest/) with some
 simple tutorials on installing and using Julia targeted at MIT
 students.  See also our [Julia
-cheatsheet](http://math.mit.edu/~stevenj/Julia-cheatsheet.pdf) listing
+cheatsheet](Julia-cheatsheet.pdf) listing
 a few basic commands, as well as the [Learn Julia in Y minutes](http://learnxinyminutes.com/docs/julia/) tutorial page.
 
 In particular, we will be using Julia in the
