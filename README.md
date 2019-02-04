@@ -2,13 +2,13 @@ Julia for Numerical Computation in MIT Courses
 ==============================================
 
 Several MIT courses involving numerical computation, including
-[18.06](http://web.mit.edu/18.06/www/),
-[18.303](http://math.mit.edu/~stevenj/18.303/),
-[18.330](http://homerreid.com/teaching/18.330/),
-[18.335/6.337](http://math.mit.edu/~stevenj/18.335/),
-[18.337/6.338](http://beowulf.csail.mit.edu/18.337/index.html),
+[18.06](https://github.com/mitmath/1806),
+[18.303](https://github.com/mitmath/18303),
+[18.330](http://math.mit.edu/classes/18.330/),
+[18.335/6.337](https://github.com/mitmath/18335),
+[18.337/6.338](http://beowulf.csail.mit.edu/18.337),
 and
-[18.338](http://web.mit.edu/18.338/www/),
+[18.338](https://github.com/alanedelman/18.338-Eigenvalues-of-Random-Matrices),
 are
 beginning to use [Julia](http://julialang.org/), a fairly new language
 for technical computing.  This page is intended to supplement the
@@ -101,29 +101,30 @@ If you use Julia enough, you'll eventually want to install it on your own comput
 Your code will run faster and won't require a network connection, but can still use
 the same browser-based notebook interface.
 
-First, [download the 0.6 release of Julia](https://julialang.org/downloads/oldreleases.html) *version
-0.6.x* and run the installer.  (We will soon switch our classes to Julia 1.0 but haven't done so yet in Fall 2018.)
+First, [download the 1.1 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
-it); a window with a `julia>` prompt will appear.  At the prompt,
-type:
+it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
+type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
+where you can type
 
 ```jl
-Pkg.add("IJulia")
+(v1.1) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
 use in a lot of the lecture materials:
 ```jl
-Pkg.add("Interact")
-Pkg.add("PyPlot")
+(v1.1) pkg> add Interact PyPlot Plots
 ```
 
-Then you can launch the notebook by running
+Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
+you can launch the notebook by running
 ```jl
-using IJulia
-notebook()
+julia> using IJulia
+
+julia> notebook()
 ```
-at the `julia>` prompt, as described below.
+as is also described below.
 
 (An alternative is to download the [JuliaPro package](https://juliacomputing.com/products/juliapro.html#comparison),
 which includes Julia, IJulia, the [Juno IDE](http://junolab.org/) based on the [Atom editor](https://atom.io/),
@@ -131,14 +132,11 @@ and a number of packages pre-installed.)
 
 ### Troubleshooting:
 
-* On **Windows**, if you saw an error message like `post-link script failed for package defaults::ipykernel`, then you hit a problem with the Anaconda installer.  A workaround is to force Jupyter to install using Python 2 instead of Python 3, as [explained in this comment](https://github.com/JuliaLang/IJulia.jl/issues/739#issuecomment-419605998).
-* If you ran into a problem with the above steps, after fixing the
-problem you can type `Pkg.build()` to try to rerun the install scripts.
-* If you tried it a while ago, try running `Pkg.update()` and try again:
+* If you ran into a problem with the above steps, after fixing the problem you can type `build` at the `pkg>` prompt to try to rerun the install scripts.
+* If you tried it a while ago, try running `update` at the `pkg>` prompt and try again:
   this will fetch the latest versions of the Julia packages in case
-  the problem you saw was fixed.  Run `Pkg.build("IJulia")` if your Julia version may have changed.  If this doesn't work, try just deleting the whole `.julia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory) and re-adding the packages.
-* On MacOS, you currently need MacOS 10.7 or later; [MacOS 10.6 doesn't work](https://github.com/JuliaLang/julia/issues/4215) (unless you compile Julia yourself, from source code).
-* Internet Explorer 8 (the default in Windows 7) or 9 don't work with the notebook; use Firefox (6 or later) or Chrome (13 or later).  Internet Explorer 10 in Windows 8 works (albeit with a few rendering glitches), but Chrome or Firefox is better.
+  the problem you saw was fixed.  Run `build IJulia` at the `pkg>` prompt if your Julia version may have changed.  If this doesn't work, try just deleting the whole `.julia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory) and re-adding the packages.
+* On MacOS, you need MacOS 10.8 or later.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try creating a new Python notebook (not Julia) from the `New` button in the Jupyter dashboard, to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
 
 ### Julia on MIT Athena
@@ -147,8 +145,7 @@ Julia is also installed on MIT's [Athena Computing
 Environment](http://ist.mit.edu/athena).  Any MIT student can use the
 computers in the [Athena Clusters](http://ist.mit.edu/athena-clusters)
 on campus, and you can also log in remotely to `athena.dialup.mit.edu`
-via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).  (*Note*: the
-`linux.mit.edu` dialup does *not* work with Julia.)
+via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).
 
 In the terminal of an Athena machine, type:
 ```
@@ -156,18 +153,15 @@ add julia
 ```
 to load the Julia and IPython software locker.
 
-The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type
+The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type `]` to get a `pkg>` prompt and type
 ```jl
-Pkg.update()
-Pkg.add("PyPlot")
-Pkg.add("IJulia")
+(v1.1) pkg> update
+(v1.1) pkg> add IJulia PyPlot Interact
 ```
 
 Thereafter, you can run the notebook as below.
 
-(Unfortunately, as of this writing Athena still has IPython version 2,
-whereas IJulia requires IPython version 3 or later, so you can't use
-the `ipython` on Athena.)
+**As of this writing, Athena still has Julia 0.6.2; we are hoping that they will update to Julia 1.1 soon.**
 
 #### Remote access to Julia on Athena.
 
@@ -181,7 +175,7 @@ nicer than running a web browser remotely over X Windows).   The steps are:
 
 * `add julia` and make sure IJulia is installed as above.
 
-* Quit Julia and type (at the Athena prompt): `ipython notebook --no-browser`  ... unfortunately, this won't work until Athena installs a newer version of `ipython`.  Instead of `ipython`, you can find the `jupyter notebook` command that Julia installs by running `using IJulia; join(IJulia.notebook_cmd, " ")` in Julia.
+* Quit Julia and type (at the Athena prompt): `jupyter notebook --no-browser`  ... unfortunately, this won't work until Athena installs a newer version of `jupyter`.
 
 * In your ordinary web browser, type `localhost:8778` in the address bar.
 
@@ -194,18 +188,18 @@ update to a more recent version.  The same is true of Julia add-on
 packages like PyPlot.  To update the packages only, keeping Julia itself
 the same, just run:
 ```jl
-Pkg.update()
+(v1.1) pkg> update
 ```
-at the Julia prompt (or in IJulia).
+at the Julia `pkg>` prompt after typing `]`; you can also run `] update` in IJulia.
 
 If you download and install a new version of Julia from the Julia web
 site, you will also probably want to update the packages with
-`Pkg.update()` (in case newer versions of the packages are required
+`update` (in case newer versions of the packages are required
 for the most recent Julia).  In any case, if you install a new Julia
 binary (or do anything that changes the location of Julia on your
 computer), you *must* update the IJulia installation (to tell IPython
-where to find the new Julia) by running `Pkg.build("IJulia")` at the
-Julia command line (not in IJulia).
+where to find the new Julia) by running `build` at the
+Julia `pkg>` prompt line (not in IJulia).
 
 ## Running Julia in the IJulia Notebook
 
@@ -213,8 +207,8 @@ Once you have followed the installation steps above, open up the
 Julia command line (run `julia` or double-click the `julia` program)
 and run
 ```jl
-using IJulia
-notebook()
+julia> using IJulia
+julia> notebook()
 ```
 (You will have to leave the Julia command-line window open in order
 to keep the IJulia/Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
@@ -268,7 +262,7 @@ must usually [be
 installed](http://docs.julialang.org/en/latest/manual/packages/)
 first, e.g. by the `Pkg.add("PyPlot")` command from the installation
 instructions above).  The *very first* time you do this, it will
-take some time; in Julia 0.4 or later, the module and its dependencies will be
+take some time: the module and its dependencies will be
 "precompiled" so that in subsequent Julia sessions it will load quickly.
 
 Then, you can type any of the [commands from
