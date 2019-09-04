@@ -101,14 +101,14 @@ If you use Julia enough, you'll eventually want to install it on your own comput
 Your code will run faster and won't require a network connection, but can still use
 the same browser-based notebook interface.
 
-First, [download the 1.1 release of Julia](https://julialang.org/downloads/) run the installer.
+First, [download the 1.2 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
 type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
 where you can type
 
 ```jl
-(v1.1) pkg> add IJulia
+(v1.2) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
@@ -116,6 +116,7 @@ use in a lot of the lecture materials:
 ```jl
 (v1.1) pkg> add Interact PyPlot Plots
 ```
+(You can install packages later as you need them using the same interface, of course.)
 
 Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
 you can launch the notebook by running
@@ -155,8 +156,8 @@ to load the Julia and IPython software locker.
 
 The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type `]` to get a `pkg>` prompt and type
 ```jl
-(v1.1) pkg> update
-(v1.1) pkg> add IJulia PyPlot Interact
+(v1.2) pkg> update
+(v1.2) pkg> add IJulia PyPlot Interact
 ```
 
 Thereafter, you can run the notebook as below.
@@ -188,7 +189,7 @@ update to a more recent version.  The same is true of Julia add-on
 packages like PyPlot.  To update the packages only, keeping Julia itself
 the same, just run:
 ```jl
-(v1.1) pkg> update
+(v1.2) pkg> update
 ```
 at the Julia `pkg>` prompt after typing `]`; you can also run `] update` in IJulia.
 
