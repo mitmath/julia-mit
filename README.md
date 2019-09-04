@@ -16,16 +16,14 @@ for technical computing.  This page is intended to supplement the
 simple tutorials on installing and using Julia targeted at MIT
 students.  See also our [Julia
 cheatsheet](Julia-cheatsheet.pdf) listing
-a few basic commands, as well as the [Learn Julia in Y minutes](http://learnxinyminutes.com/docs/julia/) tutorial page.
+a few basic commands, and [various Julia tutorials online](https://julialang.org/learning/).
 
 In particular, we will be using Julia in the
 [IJulia](https://github.com/JuliaLang/IJulia.jl) browser-based
 enviroment, which leverages your web browser and
-[IPython](http://ipython.org/) to provide a rich environment
+[Jupyter](https://jupyter.org/) to provide a rich environment
 combining code, graphics, formatted text, and even equations, with
 sophisticated plots via [Matplotlib](http://matplotlib.org/).
-
-See also Viral Shah's [Julia slides](https://github.com/ViralBShah/julia-presentations/raw/master/Fifth-Elephant-2013/Fifth-Elephant-2013.pdf) and the January 2013 [Julia Tutorial videos](http://julialang.org/blog/2013/03/julia-tutorial-MIT/).
 
 ## Why Julia?
 
