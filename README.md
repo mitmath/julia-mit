@@ -27,62 +27,17 @@ sophisticated plots via [Matplotlib](http://matplotlib.org/).
 
 ## Why Julia?
 
-Traditionally, these sorts of courses at MIT have used
-[Matlab](https://en.wikipedia.org/wiki/MATLAB), a high-level
-environment for numerical computation.  Other possibilities might be
-[Scientific Python](http://www.scipy.org/) (the [Python
-language](http://python.org/) plus numerical libraries), [GNU
-R](http://www.r-project.org/), and many others.  Julia is another
+Julia is relatively new
 high-level free/open-source language for numerical computing in the
 same spirit, with a rich set of built-in types and libraries for
 working with linear algebra and other types of computations, with a
 syntax that is superficially reminiscent of Matlab's.
-
-High-level dynamic programming languages (as opposed to low-level
-languages like C or static languages like Java) are essential for
-interactive exploration of computational science.  They allow you to
-play with matrices, computations on large datasets, plots, and so on
-without having to worry about managing memory, declaring types, or
-other minutiae—you can open up a window and start typing commands to
-immediately get results.
-
-The traditional problem with high-level dynamic languages, however, is
-that they are slow: as soon as you run into a problem that cannot
-easily be expressed in terms of built-in library functions operating
-on large blocks of data ("vectorized" code), you find that your code
-is suddenly orders of magnitude slower that equivalent code in a
-low-level language.  The typical solution has been to switch to
-another language (e.g. C or Fortran) to write key computational
-kernels, calling these from the high-level language (e.g. Matlab or
-Python) as needed, but this is vastly more difficult than writing code
-purely in a high-level language and imposes a steep barrier on anyone
-hoping to transition from casual experimentation to "serious"
-numerical computation.  Julia mostly eliminates this issue, because it
-is carefully designed to exploit a "[just-in-time
-compiler](https://en.wikipedia.org/wiki/Just-in-time_compilation)"
-called [LLVM](http://llvm.org/), making it possible to write
-high-level code in Julia that achieves near-C speed.  (It also means
-that we can perform meaningful performance experiments easily in
-courses where this matters, e.g.  in 18.335.)
-
-Speed, while avoiding the "two-language" problem of requiring C or
-Fortran for critical code, is the initial draw of Julia, but there are
-a few other nice points.  Unlike Matlab, it is free/open-source
-software, which eliminates licensing headaches and allows you to look
-inside the Julia implementation to see how it works (since Julia is
-mostly written in Julia, its code is much more readable than a
-language like Python that is largely implemented in low-level C).  For
-calling existing code, it has easy facilities to [call external C or
-Fortran
-libraries](http://docs.julialang.org/en/latest/manual/calling-c-and-fortran-code/)
-or to [call Python libraries](https://github.com/stevengj/PyCall.jl).
-[Multiple
-dispatch](http://docs.julialang.org/en/latest/manual/methods/) makes
-it especially easy to overload operations and functions for new types
-(e.g. to add new vector or numeric types).  Julia's built-in
-[metaprogramming](http://docs.julialang.org/en/latest/manual/metaprogramming/)
-facilities make it easy to write code that generates other code,
-essentially allowing you to extend the language as needed.  And so on...
+Basically, we are using Julia because, unlike Matlab or Python or R, it
+**scales better to real computational problems** — you can write performance-critical
+"inner loops" in Julia, whereas similar tasks in other high-level languages
+often require one to drop down to C or similar low-level languages.   Because of
+this, we are using Julia more and more in our own research, and we want to **teach
+using software tools that we really employ ourselves**.
 
 ## Using Julia on juliabox
 
