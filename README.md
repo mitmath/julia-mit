@@ -89,30 +89,28 @@ essentially allowing you to extend the language as needed.  And so on...
 The simplest way to use Julia is to go to <a href="https://juliabox.com/">juliabox.com</a>.  Once
 you log in (e.g. with a gmail account), you can run Julia code online (on Amazon Cloud servers)
 via the browser-based Jupyter notebook interface without installing *anything* on your computer.
-
-Although you wouldn't want to run large computations on juliabox, it should be fine for
-simple homework problems.
+Unfortunately, this is only a 30-day free trial, but it is an easy way to try things out.
 
 ## Installing Julia and IJulia
 
-If you use Julia enough, you'll eventually want to install it on your own computer.
+You'll eventually want to install Julia on your own computer.
 Your code will run faster and won't require a network connection, but can still use
 the same browser-based notebook interface.
 
-First, [download the 1.2 release of Julia](https://julialang.org/downloads/) run the installer.
+First, [download the 1.3 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
 type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
 where you can type
 
 ```jl
-(v1.2) pkg> add IJulia
+(v1.3) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
 use in a lot of the lecture materials:
 ```jl
-(v1.1) pkg> add Interact PyPlot Plots
+(v1.3) pkg> add Interact PyPlot Plots
 ```
 (You can install packages later as you need them using the same interface, of course.)
 
@@ -160,8 +158,6 @@ The *first* time you use Julia on Athena, you will need to set up IJulia: run `j
 
 Thereafter, you can run the notebook as below.
 
-**As of this writing, Athena still has Julia 0.6.2; we are hoping that they will update to Julia 1.1 soon.**
-
 #### Remote access to Julia on Athena.
 
 If you are [logging in
@@ -187,7 +183,7 @@ update to a more recent version.  The same is true of Julia add-on
 packages like PyPlot.  To update the packages only, keeping Julia itself
 the same, just run:
 ```jl
-(v1.2) pkg> update
+(v1.3) pkg> update
 ```
 at the Julia `pkg>` prompt after typing `]`; you can also run `] update` in IJulia.
 
