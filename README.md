@@ -90,7 +90,6 @@ and a number of packages pre-installed.)
   the problem you saw was fixed.  Run `build IJulia` at the `pkg>` prompt if your Julia version may have changed.  If this doesn't work, try just deleting the whole `.julia` directory in your home directory (on Windows, it is called `AppData\Roaming\julia\packages` in your home directory) and re-adding the packages.
 * On MacOS, you need MacOS 10.8 or later.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try creating a new Python notebook (not Julia) from the `New` button in the Jupyter dashboard, to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
-* On Windows, if the `notebook()` function is returning immediately a `ProcessExited` error, try doing `add Conda` at the `pkg>` prompt and then, at the `julia>` prompt, run `using Conda; Conda.add("python=3.8")` in order to fix a Python-version incompatibility that has cropped up with a recent Jupyter release.
 
 ### Julia on MIT Athena
 
