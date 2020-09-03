@@ -35,22 +35,11 @@ syntax that is superficially reminiscent of Matlab's.
 Basically, we are using Julia because, unlike Matlab or Python or R, it
 **scales better to real computational problems** — you can write performance-critical
 "inner loops" in Julia, whereas similar tasks in other high-level languages
-often require one to drop down to C or similar low-level languages.   Because of
+often require one to drop down to C or similar low-level languages.  (See e.g. [this 6.172 lecture](https://bit.ly/2QUrgB4) on performance in Julia vs. Python.) Because of
 this, we are using Julia more and more in our own research, and we want to **teach
 using software tools that we really employ ourselves**.
 
-## Using Julia on juliabox
-
-The simplest way to use Julia is to go to <a href="https://juliabox.com/">juliabox.com</a>.  Once
-you log in (e.g. with a gmail account), you can run Julia code online (on Amazon Cloud servers)
-via the browser-based Jupyter notebook interface without installing *anything* on your computer.
-Unfortunately, this is only a 30-day free trial, but it is an easy way to try things out.
-
 ## Installing Julia and IJulia
-
-You'll eventually want to install Julia on your own computer.
-Your code will run faster and won't require a network connection, but can still use
-the same browser-based notebook interface.
 
 First, [download the 1.5 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
@@ -91,7 +80,29 @@ and a number of packages pre-installed.)
 * On MacOS, you need MacOS 10.8 or later.
 * If the notebook opens up, but doesn't respond (the input label is `In[*]` indefinitely), try creating a new Python notebook (not Julia) from the `New` button in the Jupyter dashboard, to see if `1+1` works in Python.  If it is the same problem, then probably you have a [firewall running](https://github.com/ipython/ipython/issues/2499) on your machine (this is common on Windows) and you need to disable the firewall or at least to allow the IP address 127.0.0.1.  (For the [Sophos](https://en.wikipedia.org/wiki/Sophos) endpoint security software, go to "Configure Anti-Virus and HIPS", select "Authorization" and then "Websites", and add 127.0.0.1 to "Authorized websites"; finally, restart your computer.)
 
-### Julia on MIT Athena
+## Other Julia environments
+
+### Pluto.jl
+
+A different interactive-computing environment for Julia is [Pluto.jl](https://github.com/fonsp/Pluto.jl), which runs in the browser like Jupyter but is **more oriented towards "live" interaction** where updating one piece of code *automatically re-runs anything affected* by that change.   Running Julia is as easy as:
+
+```jl
+pkg> add Pluto
+
+julia> using Pluto
+
+julia> Pluto.run()
+```
+
+### VSCode
+
+For writing larger programs, modules, and packages (as opposed to little interactive snippets), you'll want to start putting code into files and modules, and use a more full-featured code-editing environment.  A popular choice is the free/cross-platform [Visual Studio Code (VSCode)](https://code.visualstudio.com/) editor, which has a [Julia VSCode plugin](https://www.julia-vscode.org/) to provide a full-featured integrated development environment (IDE).
+
+### Other Editors
+
+Of course, there is also good support for editing Julia in many other programs, such as [Emacs](https://github.com/JuliaEditorSupport/julia-emacs), [Vim](https://github.com/JuliaEditorSupport/julia-vim), [Atom](https://github.com/JuliaEditorSupport/atom-language-julia), and [so forth](https://github.com/JuliaEditorSupport).
+
+## Julia on MIT Athena
 
 Julia is also installed on MIT's [Athena Computing
 Environment](http://ist.mit.edu/athena).  Any MIT student can use the
@@ -131,7 +142,7 @@ nicer than running a web browser remotely over X Windows).   The steps are:
 
 You should see the IPython dashboard for IJulia running on Athena (creating a new notebook will create the file in your Athena account).
 
-### Updating Julia and IJulia
+## Updating Julia and IJulia
 
 Julia is improving rapidly, so it won't be long before you want to
 update to a more recent version.  The same is true of Julia add-on
