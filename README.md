@@ -56,7 +56,7 @@ use in a lot of the lecture materials:
 ```jl
 (v1.5) pkg> add Interact PyPlot Plots
 ```
-(You can install packages later as you need them using the same interface, of course.)
+(You can install packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
 Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
 you can launch the notebook by running
