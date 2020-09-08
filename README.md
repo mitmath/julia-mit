@@ -25,7 +25,7 @@ enviroment, which leverages your web browser and
 combining code, graphics, formatted text, and even equations, with
 sophisticated plots via [Matplotlib](http://matplotlib.org/).
 
-You can also look at the Jupyter notebook from the [fall 2020 tutorial](Tutorial.ipynb), as well as the [tutorial video (MIT only)](https://mit.zoom.us/rec/share/KkcD_HEg-li4xK-Pnf4a4NTygWPjsUhXL2vmctxw1FcFosBQgzLhtLwPP4oUEYUs.CKdtEC0KS4V9Ujr3).
+You can also look at the Jupyter notebook from the [fall 2020 tutorial](Tutorial.ipynb), as well as the [tutorial video (MIT only)](https://mit.zoom.us/rec/share/FcA8_JB8vZ-3FmX6_x2qaeRMk0aCOkFl9cMrba1rhQYDDv8TNeatMqTh7eXabBHq.7AQu81CA0eiu2z7g?startTime=1599594382000).
 
 ## Why Julia?
 
