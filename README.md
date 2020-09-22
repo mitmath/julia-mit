@@ -223,8 +223,8 @@ command to load an [external
 module](http://docs.julialang.org/en/latest/manual/modules/) (which
 must usually [be
 installed](http://docs.julialang.org/en/latest/manual/packages/)
-first, e.g. by the `Pkg.add("PyPlot")` command from the installation
-instructions above).  The *very first* time you do this, it will
+first, e.g. by the `] add PyPlot` command from the installation
+instructions above).  The *very first* time you do `using PyPlot`, it will
 take some time: the module and its dependencies will be
 "precompiled" so that in subsequent Julia sessions it will load quickly.
 
