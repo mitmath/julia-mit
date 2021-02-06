@@ -41,7 +41,24 @@ often require one to drop down to C or similar low-level languages.  (See e.g. [
 this, we are using Julia more and more in our own research, and we want to **teach
 using software tools that we really employ ourselves**.
 
-## Installing Julia and IJulia
+## Running Julia in the cloud
+
+The easiest way to get started with Julia is to run it in the cloud on [`mybinder.org`](https://mybinder.org/), which is as easy as clicking this link:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mitmath/binder-env/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fmitmath%252Fjulia-mit%26urlpath%3Dtree%252Fjulia-mit%252F%26branch%3Dmaster)
+
+That link opens up a [default MIT-math Julia + Python environment](https://github.com/mitmath/binder-env) that we set up, but you can also [easily set up your own environments](https://mybinder.readthedocs.io/en/latest/index.html).   Although the link above gives you access to [our tutorial notebook here](https://nbviewer.jupyter.org/github/mitmath/julia-mit/blob/master/Tutorial.ipynb), you can create alternate links (e.g. for particular MIT courses) using [nbgitpuller](https://jupyterhub.github.io/nbgitpuller/link).
+
+
+There are two major drawbacks to using `mybinder.org`:
+
+* It's slow (perhaps almost 50× slower than your laptop), although it's probably fast enough for simple problems in coursework.
+
+* It has a very short timeout: if you go for a coffee break, your session will probably have stopped running by the time you get back.  Fortunately, [there are save/download buttons](https://discourse.jupyter.org/t/getting-your-notebook-after-your-binder-has-stopped/3268) that still work in a timed-out session, so you can save your work and restore it after restarting the binder session.
+
+Eventually you'll probably want to install Julia on your own computer to eliminate these frustrations.  Fortunately, this is usually relatively easy:
+
+## Installing Julia and IJulia on your own computer
 
 First, [download the 1.5 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
