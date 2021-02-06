@@ -52,7 +52,7 @@ That link opens up a [default MIT-math Julia + Python environment](https://githu
 
 There are two major drawbacks to using the free `mybinder.org` service:
 
-* It's often slow (sometimes an order of magnitude slower than a typical laptop), especially to start up and load packages, although it's probably fast enough for simple problems in coursework.
+* It's often slow (sometimes an order of magnitude slower than a typical laptop), especially to start up, although it's probably fast enough for simple problems in coursework.
 
 * It has a very short timeout: if you go for a coffee break, your session will probably have stopped running by the time you get back.  Fortunately, [there are save/download buttons](https://discourse.jupyter.org/t/getting-your-notebook-after-your-binder-has-stopped/3268) that still work in a timed-out session, so you can save your work and restore it after restarting the binder session.
 
