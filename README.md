@@ -50,11 +50,13 @@ The easiest way to get started with Julia is to run it in the cloud on [`mybinde
 That link opens up a [default MIT-math Julia + Python environment](https://github.com/mitmath/binder-env) that we set up, but you can also [easily set up your own environments](https://mybinder.readthedocs.io/en/latest/index.html).   Although the link above gives you access to [our tutorial notebook here](https://nbviewer.jupyter.org/github/mitmath/julia-mit/blob/master/Tutorial.ipynb), you can create alternate links (e.g. for particular MIT courses) using [nbgitpuller](https://jupyterhub.github.io/nbgitpuller/link).
 
 
-There are two major drawbacks to using `mybinder.org`:
+There are two major drawbacks to using the free `mybinder.org` service:
 
-* It's slow (perhaps almost 50× slower than your laptop), although it's probably fast enough for simple problems in coursework.
+* It's often slow (sometimes an order of magnitude slower than a typical laptop), although it's probably fast enough for simple problems in coursework.
 
 * It has a very short timeout: if you go for a coffee break, your session will probably have stopped running by the time you get back.  Fortunately, [there are save/download buttons](https://discourse.jupyter.org/t/getting-your-notebook-after-your-binder-has-stopped/3268) that still work in a timed-out session, so you can save your work and restore it after restarting the binder session.
+
+* There are at most 100 simultaneous users for a given configuration repository.  (Therefore, if your instructor wants to use mybinder for a course, encourage them to set up their own docker configuration, perhaps by forking [our repo](https://github.com/mitmath/binder-env).)
 
 Eventually you'll probably want to install Julia on your own computer to eliminate these frustrations.  Fortunately, this is usually relatively easy:
 
