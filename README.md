@@ -62,20 +62,20 @@ Eventually you'll probably want to install Julia on your own computer to elimina
 
 ## Installing Julia and IJulia on your own computer
 
-First, [download the 1.5 release of Julia](https://julialang.org/downloads/) run the installer.
+First, [download the 1.6 release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
 type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
 where you can type
 
 ```jl
-(v1.5) pkg> add IJulia
+(v1.6) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
 use in a lot of the lecture materials:
 ```jl
-(v1.5) pkg> add Interact PyPlot Plots
+(v1.6) pkg> add Interact PyPlot Plots
 ```
 (You can install packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
