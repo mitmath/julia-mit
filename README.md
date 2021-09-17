@@ -123,45 +123,6 @@ For writing larger programs, modules, and packages (as opposed to little interac
 
 Of course, there is also good support for editing Julia in many other programs, such as [Emacs](https://github.com/JuliaEditorSupport/julia-emacs), [Vim](https://github.com/JuliaEditorSupport/julia-vim), [Atom](https://github.com/JuliaEditorSupport/atom-language-julia), and [so forth](https://github.com/JuliaEditorSupport).
 
-## Julia on MIT Athena
-
-Julia is also installed on MIT's [Athena Computing
-Environment](http://ist.mit.edu/athena).  Any MIT student can use the
-computers in the [Athena Clusters](http://ist.mit.edu/athena-clusters)
-on campus, and you can also log in remotely to `athena.dialup.mit.edu`
-via [ssh](https://en.wikipedia.org/wiki/Secure_Shell).
-
-In the terminal of an Athena machine, type:
-```
-add julia
-```
-to load the Julia and IPython software locker.
-
-The *first* time you use Julia on Athena, you will need to set up IJulia: run `julia`, and at the `julia>` prompt, type `]` to get a `pkg>` prompt and type
-```jl
-(v1.2) pkg> update
-(v1.2) pkg> add IJulia PyPlot Interact
-```
-
-Thereafter, you can run the notebook as below.
-
-#### Remote access to Julia on Athena.
-
-If you are [logging in
-remotely](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907166)
-to `athena.dialup.mit.edu`, you can use a trick called "port
-forwarding" to run IJulia in your local web browser (MUCH faster and
-nicer than running a web browser remotely over X Windows).   The steps are:
-
-* Log in by typing `ssh -L 8778:localhost:8998 athena.dialup.mit.edu` into your terminal.  (This works with Macs and GNU/Linux; how you do it on Windows will depend upon your ssh client and whether it supports port forwarding: you want to forward port 8998 on the remote machine to port 8778 on `localhost`.)
-
-* `add julia` and make sure IJulia is installed as above.
-
-* Quit Julia and type (at the Athena prompt): `jupyter notebook --no-browser`  ... unfortunately, this won't work until Athena installs a newer version of `jupyter`.
-
-* In your ordinary web browser, type `localhost:8778` in the address bar.
-
-You should see the IPython dashboard for IJulia running on Athena (creating a new notebook will create the file in your Athena account).
 
 ## Updating Julia and IJulia
 
