@@ -79,6 +79,16 @@ use in a lot of the lecture materials:
 ```
 (You can install packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
+#### Running IJulia through the JupyterLab app
+
+Download the [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) program, and launch it.   Choose "New Notebook" from the file menu, and choose the "Julia" kernel.  You should
+now have an interactive Julia notebook.
+
+#### Running IJulia through Jupyter in your browser
+
+You can also use Julia itself to install the Jupyter softare
+and have it run its interface through your web browser.
+
 Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
 you can launch the notebook by running
 ```jl
@@ -86,11 +96,15 @@ julia> using IJulia
 
 julia> notebook()
 ```
-as is also described below.
+and type "y" if you are asked to install Jupyter.   A "dashboard" window like this should open in your web browser (at address `localhost:8888`, which you can return to at any time as long as the `notebook()` server is running; I usually keep it running all the time):
 
-(An alternative is to download the [JuliaPro package](https://juliacomputing.com/products/juliapro.html#comparison),
-which includes Julia, IJulia, the [Juno IDE](http://junolab.org/) based on the [Atom editor](https://atom.io/),
-and a number of packages pre-installed.)
+![IJulia dashboard](dashboard.png "IJulia Dashboard Window")
+
+Now, click on the *New* button and select the *Julia* option to start a new "notebook".
+
+(You will have to leave the Julia command-line window open in order
+to keep the IJulia/Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
+ever want to restart the Jupyter server you will need to kill it manually.
 
 ### Troubleshooting:
 
@@ -146,29 +160,20 @@ Julia `pkg>` prompt line (not in IJulia).
 
 ## Running Julia in the IJulia Notebook
 
-Once you have followed the installation steps above, open up the
-Julia command line (run `julia` or double-click the `julia` program)
-and run
-```jl
-julia> using IJulia
-julia> notebook()
-```
-(You will have to leave the Julia command-line window open in order
-to keep the IJulia/Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
-ever want to restart the Jupyter server you will need to kill it manually.
+Once you have followed the installation steps above, then you
+will want to open the IJulia (Jupyter + Julia) notebook interface.
+As explained above, you can either launch the standalone
+JupyterLab Desktop app (which you download and install separately),
+or you can install Jupyter via Julia and run it via your web browser.
 
-A "dashboard" window like this should open in your web browser (at address `localhost:8888`, which you can return to at any time as long as the `notebook()` server is running; I usually keep it running all the time):
-
-![IJulia dashboard](dashboard.png "IJulia Dashboard Window")
-
-Now, click on the *New* button and select the *Julia* option to start a new "notebook".  A notebook will combine code, computed results, formatted text, and
+Either way, a notebook will combine code, computed results, formatted text, and
 images; for example, you might use one notebook for each problem set.
 The notebook window that opens will look something like:
 
 ![IJulia notebook](notebook-1.png "IJulia empty notebook")
 
-You can click the "Untitled" at the top to change the name, e.g. to
-"My first Julia notebook".  You can enter Julia code at the `In[ ]`
+In the browser can click the "Untitled" at the top to change the name, e.g. to
+"My first Julia notebook"; in JupyterLab you click the "Rename" option in the "File" menu.  You can enter Julia code at the `In[ ]`
 prompt, and hit **shift-return** to execute it and see the results.
 If you hit **return** *without* the shift key, it will add additional
 lines to a single input cell.  For example, we can [define a variable](http://docs.julialang.org/en/latest/manual/variables/)
