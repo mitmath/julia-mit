@@ -18,10 +18,10 @@ students.  See also our [Julia
 cheatsheet](Julia-cheatsheet.pdf) listing
 a few basic commands, and [various Julia tutorials online](https://julialang.org/learning/).
 
-In particular, we will be using Julia in the
-[IJulia](https://github.com/JuliaLang/IJulia.jl) browser-based
-enviroment, which leverages your web browser and
-[Jupyter](https://jupyter.org/) to provide a rich environment
+In particular, we will be using Julia in the [Jupyter](https://jupyter.org/) browser-based
+enviroment (via the [IJulia](https://github.com/JuliaLang/IJulia.jl)
+plug-in), which leverages your web browser and
+ to provide a rich environment
 combining code, graphics, formatted text, and even equations, with
 sophisticated plots via [Matplotlib](http://matplotlib.org/).
 
@@ -79,14 +79,19 @@ use in a lot of the lecture materials:
 ```
 (You can install packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
-#### Running IJulia through the JupyterLab app
+#### Running Julia through the JupyterLab app
 
-Download the [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) program, and launch it.   Choose "New Notebook" from the file menu, and choose the "Julia" kernel.  You should
-now have an interactive Julia notebook.
+Download the [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) program, and launch it.   Click the "Julia"
+button (or choose "New > Notebook" from the file menu and select the "Julia" kernel):
 
-#### Running IJulia through Jupyter in your browser
+![JupyterLab desktop](jupyterlab-desktop.png "JupyterLab-desktop Window")
 
-You can also use Julia itself to install the Jupyter softare
+You should now have an interactive Julia notebook, whose usage
+we describe below.
+
+#### Running Julia through Jupyter in your browser
+
+You can alternatively use Julia itself to install the Jupyter softare
 and have it run its interface through your web browser.
 
 Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
@@ -98,12 +103,12 @@ julia> notebook()
 ```
 and type "y" if you are asked to install Jupyter.   A "dashboard" window like this should open in your web browser (at address `localhost:8888`, which you can return to at any time as long as the `notebook()` server is running; I usually keep it running all the time):
 
-![IJulia dashboard](dashboard.png "IJulia Dashboard Window")
+![Jupyter dashboard](dashboard.png "Jupyter Dashboard Window")
 
 Now, click on the *New* button and select the *Julia* option to start a new "notebook".
 
-(You will have to leave the Julia command-line window open in order
-to keep the IJulia/Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
+(You will have to leave this Julia command-line window open in order
+to keep the Jupyter process running.  Alternatively, you can run `notebook(detached=true)` if you want to run the Jupyter server as a background process, at which point you can close the Julia command line, but then if you
 ever want to restart the Jupyter server you will need to kill it manually.
 
 ### Troubleshooting:
@@ -158,10 +163,10 @@ computer), you *must* update the IJulia installation (to tell IPython
 where to find the new Julia) by running `build` at the
 Julia `pkg>` prompt line (not in IJulia).
 
-## Running Julia in the IJulia Notebook
+## Running Julia in the Jupyter Notebook
 
 Once you have followed the installation steps above, then you
-will want to open the IJulia (Jupyter + Julia) notebook interface.
+will want to open the Jupyter notebook interface.
 As explained above, you can either launch the standalone
 JupyterLab Desktop app (which you download and install separately),
 or you can install Jupyter via Julia and run it via your web browser.
@@ -170,7 +175,7 @@ Either way, a notebook will combine code, computed results, formatted text, and
 images; for example, you might use one notebook for each problem set.
 The notebook window that opens will look something like:
 
-![IJulia notebook](notebook-1.png "IJulia empty notebook")
+![Jupyter notebook](notebook-1.png "Jupyter empty notebook")
 
 In the browser can click the "Untitled" at the top to change the name, e.g. to
 "My first Julia notebook"; in JupyterLab you click the "Rename" option in the "File" menu.  You can enter Julia code at the `In[ ]`
@@ -183,7 +188,7 @@ lines to a single input cell.  For example, we can [define a variable](http://do
 we don't want to: a number followed by a variable is automatically
 interpreted as multiplication without having to type `*`):
 
-![IJulia notebook](notebook-2.png "Renamed IJulia notebook with a result")
+![Jupyter notebook](notebook-2.png "Renamed Jupyter notebook with a result")
 
 The result that is printed (in `Out[1]`) is the *last* expression from
 the input cell, i.e. the polynomial.  If you want to see the value of
@@ -217,7 +222,7 @@ Then, you can type any of the [commands from
 Matplotlib](http://matplotlib.org/api/pyplot_api.html), which includes
 equivalents for most of the Matlab plotting functions.  For example:
 
-![IJulia notebook](notebook-3.png "IJulia notebook with a plot")
+![Jupyter notebook](notebook-3.png "Jupyter notebook with a plot")
 
 ## Printing/exporting Notebooks
 
