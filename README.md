@@ -89,6 +89,8 @@ button (or choose "New > Notebook" from the file menu and select the "Julia" ker
 You should now have an interactive Julia notebook, whose usage
 we describe below.
 
+If you have **problems printing** or **exporting PDF** from the JupyterLab Desktop (on some systems this fails if you don't have LaTeX installed), a workaround is to *export as HTML* (from *File > Save and Export Notebook As… > HTML*), open the resulting `.html` in your browser (double-click on it) and print to PDF from your browser.
+
 #### Running Julia through Jupyter in your browser
 
 You can alternatively use Julia itself to install the Jupyter softare
