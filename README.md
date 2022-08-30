@@ -2,9 +2,9 @@ Julia for Numerical Computation in MIT Courses
 ==============================================
 
 Several MIT courses involving numerical computation, including
-[18.06](https://github.com/mitmath/1806),
+[18.06](https://github.com/mitmath/1806) / [18.C06](http://people.csail.mit.edu/moitra/096.html),
 [18.303](https://github.com/mitmath/18303),
-[18.330](http://math.mit.edu/classes/18.330/),
+[18.330](https://github.com/mitmath/18330),
 [18.335/6.337](https://github.com/mitmath/18335),
 [18.337/6.338](http://beowulf.csail.mit.edu/18.337),
 and
@@ -62,7 +62,7 @@ Eventually you'll probably want to install Julia on your own computer to elimina
 
 ## Installing Julia and IJulia on your own computer
 
-First, [download the 1.7.1 release of Julia](https://julialang.org/downloads/) run the installer.
+First, [download the 1.8.x release of Julia](https://julialang.org/downloads/) run the installer.
 Then run the Julia application (double-click on
 it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
 type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
@@ -77,7 +77,7 @@ use in a lot of the lecture materials:
 ```jl
 (v1.7) pkg> add Interact PyPlot Plots
 ```
-(You can install packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
+(You can install other packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
 #### Running Julia through the JupyterLab app
 
