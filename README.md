@@ -2,13 +2,13 @@ Julia for Numerical Computation in MIT Courses
 ==============================================
 
 Several MIT courses involving numerical computation, including
-[18.06](https://github.com/mitmath/1806) / [18.C06](http://people.csail.mit.edu/moitra/096.html),
+[18.06](https://github.com/mitmath/1806) / [18.C06](http://people.csail.mit.edu/moitra/096.html), [18.065/18.0651](https://github.com/mitmath/18065),
 [18.303](https://github.com/mitmath/18303),
 [18.330](https://github.com/mitmath/18330),
-[18.335/6.337](https://github.com/mitmath/18335),
-[18.337/6.338](http://beowulf.csail.mit.edu/18.337),
+[18.335/6.7310](https://github.com/mitmath/18335),
+[18.337/6.7320](https://github.com/mitmath/18337),
 and
-[18.338](https://github.com/alanedelman/18.338-Eigenvalues-of-Random-Matrices),
+[18.338](https://github.com/mitmath/18338),
 are
 beginning to use [Julia](http://julialang.org/), a fairly new language
 for technical computing.  This page is intended to supplement the
