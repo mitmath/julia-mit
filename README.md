@@ -69,13 +69,13 @@ type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https:/
 where you can type
 
 ```jl
-(v1.7) pkg> add IJulia
+(v1.8) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
 use in a lot of the lecture materials:
 ```jl
-(v1.7) pkg> add Interact PyPlot Plots
+(v1.8) pkg> add Interact PyPlot Plots
 ```
 (You can install other packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
