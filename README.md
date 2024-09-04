@@ -93,7 +93,7 @@ If you have **problems printing** or **exporting PDF** from the JupyterLab Deskt
 
 #### Running Julia through Jupyter in your browser
 
-You can alternatively use Julia itself to install the Jupyter softare
+You can alternatively use Julia itself to install the Jupyter software
 and have it run its interface through your web browser.
 
 Switch back to the `julia>` prompt by hitting backspace or ctrl-C, and then
