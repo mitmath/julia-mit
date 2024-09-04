@@ -64,7 +64,7 @@ Eventually you'll probably want to install Julia on your own computer to elimina
 
 First, [download the latest release of Julia](https://julialang.org/downloads/) and run the installer.
 Then run the Julia application (double-click on
-it); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
+it, or run `julia` in a terminal); a window with a `julia>` prompt will appear.  At the `julia>` prompt,
 type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https://docs.julialang.org/en/v1/stdlib/Pkg/),
 where you can type
 
