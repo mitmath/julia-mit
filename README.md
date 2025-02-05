@@ -69,13 +69,13 @@ type a `]` (close square bracket) to get a [Julia package prompt `pkg>`](https:/
 where you can type
 
 ```jl
-(v1.10) pkg> add IJulia
+(v1.11) pkg> add IJulia
 ```
 
 You may also want to install these packages, which we tend to
 use in a lot of the lecture materials:
 ```jl
-(v1.10) pkg> add Interact PyPlot Plots
+(v1.11) pkg> add Interact PyPlot Plots
 ```
 (You can install other packages later as you need them using the same interface, of course.  Thousands of other packages can be found on [JuliaHub](https://juliahub.com/).)
 
@@ -152,7 +152,7 @@ update to a more recent version.  The same is true of Julia add-on
 packages like PyPlot.  To update the packages only, keeping Julia itself
 the same, just run:
 ```jl
-(v1.10) pkg> update
+(v1.11) pkg> update
 ```
 at the Julia `pkg>` prompt after typing `]`; you can also run `] update` in IJulia.
 
